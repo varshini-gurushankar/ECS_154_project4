@@ -4,6 +4,11 @@
 * Student 2: Sravya Kota (919987625)
 
 ## Project Status
+09/6/25 - Finished VPWBArbiter, VPWBObserver, and VPWBSRO
+
+VPWBArbiter - Did according to lecture, confirmed that it works
+VPWBObserver - Did according to lecture, confirmed that it works
+VPWBSRO - Tried to simulate it, don't understand simulation style, but logic makes sense 
 
 ## Known Issues
 The project fails to function properly in ...
@@ -11,6 +16,7 @@ The project fails to function properly in ...
 ## References
 * [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
 * [Some other link](https://stackoverflow.com)
+* [Video on what shift registers are and how to use in logism](https://www.youtube.com/watch?v=IeeUSGXutTo&ab_channel=ShazShoaib)
 
 ## Generative AI Use
 I used ChatGPT for Prompt 1, and ZZZZZ for Prompt 2....
