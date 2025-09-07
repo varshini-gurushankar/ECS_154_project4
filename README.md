@@ -1,4 +1,4 @@
-# Project 2 README
+# Project 4 README
 
 * Student 1: Varshini Gurushankar (922249127)
 * Student 2: Sravya Kota (919987625)
