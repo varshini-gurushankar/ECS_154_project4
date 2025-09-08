@@ -10,6 +10,9 @@ VPWBArbiter - Did according to lecture, confirmed that it works
 VPWBObserver - Did according to lecture, confirmed that it works
 VPWBSRO - Tried to simulate it, don't understand simulation style, but logic makes sense 
 
+Finished VPWBSRI - Tested works
+Stuck on VPWBFrameQueue
+
 ## Known Issues
 The project fails to function properly in ...
 
