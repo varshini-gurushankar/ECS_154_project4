@@ -12,6 +12,7 @@ VPWBSRO - Tried to simulate it, don't understand simulation style, but logic mak
 
 Finished VPWBSRI - Tested works
 Stuck on VPWBFrameQueue
+09/7/25 11:54pm : Finished VPWBFrameQueue, debugged
 
 ## Known Issues
 The project fails to function properly in ...
@@ -20,6 +21,7 @@ The project fails to function properly in ...
 * [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
 * [Some other link](https://stackoverflow.com)
 * [Video on what shift registers are and how to use in logism](https://www.youtube.com/watch?v=IeeUSGXutTo&ab_channel=ShazShoaib)
+* [Video on how to use counters with classic logism](https://youtu.be/I0ohV3kFtBw)
 
 ## Generative AI Use
 I used ChatGPT for Prompt 1, and ZZZZZ for Prompt 2....
