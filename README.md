@@ -17,7 +17,9 @@ Stuck on VPWBFrameQueue
 
 9/8/25 : Finished VPWBRX and VPWBTX, Not sure if VPWBRX is right
 
-9/9/25: Finished VPWBController
+9/9/25: Finished VPWBController, 
+
+9/9/25: Finished VPWBRX, VPWBTX, and VPWController according to how the prof showed it to us in class 
 
 Need to figure out how to simulate
 
