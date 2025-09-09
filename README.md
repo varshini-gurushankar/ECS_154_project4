@@ -10,12 +10,20 @@ VPWBArbiter - Did according to lecture, confirmed that it works
 VPWBObserver - Did according to lecture, confirmed that it works
 VPWBSRO - Tried to simulate it, don't understand simulation style, but logic makes sense 
 
-Finished VPWBSRI - Tested works
+9/6/25 - Finished VPWBSRI - Tested works
 Stuck on VPWBFrameQueue
+
 09/7/25 11:54pm : Finished VPWBFrameQueue, debugged
+
+9/8/25 : Finished VPWBRX and VPWBTX, Not sure if VPWBRX is right
+
+9/9/25: Finished VPWBController
+
+Need to figure out how to simulate
 
 ## Known Issues
 The project fails to function properly in ...
+Without simulating, everything in our project should work
 
 ## References
 * [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
@@ -76,9 +84,71 @@ XOR(A, B) = \(A &and; &not; B\) &or; \(&not; A &and; B\)
 
 This way, you have constructed an XOR gate using only AND, OR, and NOT gates.
 
+### Prompt 2
+Walk me through the eight states (IDLE, B0, B00, B1, B11, E1, E0, E00) and what transitions them. Don’t design logic, give me a state transition diagram.
+
+### Response 2
+VPWBObserver: 8-state narrative + transition table
+Glossary (from the handout)
+
+IDLE – seen after ≥3 zeros in a row.
+
+B0 / B00 – 1 or 2 zeros seen since a 1 (separator run of zeros).
+
+B1 / B11 – 1 or 2 ones seen since a 0 (pulse of ones).
+
+E1 / E0 / E00 – error tracking: hit E1 on three 1s in a row (or any 1 while already in an E* state); remain in the E* family until IDLE is re-detected; no NEWBITs in E*. 
+
+
+
+Observer outputs (naming from handout):
+IDLE is true only in the IDLE state. NEWBIT pulses when a new data bit is recognized; DIN holds that bit. (Handout defines the signals, not their exact timing.) 
+
+
+
+Decoding convention used here (you can swap if your course uses the opposite):
+When a ones-run ends, B1→0 means a short pulse ⇒ DIN=1; B11→0 means a long pulse ⇒ DIN=0.
+(This matches common VPW practice: short=1, long=0.)
+
+State-transition table (inputs are sampled RX∈{0,1})
+Current	On RX=0 → Next	On RX=1 → Next	When does NEWBIT pulse?	What is DIN when it pulses?	Notes
+IDLE	IDLE (stay idle)	B1	—	—	IDLE holds on further zeros; first 1 starts a ones-run. 
+
+
+
+
+B0	B00	B1	—	—	Counting zeros (1 so far) since last 1.
+B00	IDLE (3rd zero)	B1	—	—	Third zero promotes to IDLE. 
+
+
+
+
+B1	B0	B11	Yes, on RX=0	DIN=1 (short ones-run)	1 one followed by 0 → bit recognized.
+B11	B0	E1	Yes, on RX=0	DIN=0 (long ones-run)	2 ones followed by 0 → bit recognized; 3rd 1 is an error. 
+
+
+
+
+E1	E0	E1	Never in E*	—	In error: ones keep you in E1; zeros count toward exit. 
+
+
+
+
+E0	E00	E1	Never in E*	—	Zeros progress E0→E00; any 1 snaps back to E1. 
+
+
+
+
+E00	IDLE	E1	Never in E*	—	Third consecutive 0 from error returns to IDLE. 
+
+
 ### Changes 1
 I needed XNOR, so changed it to:\
 &not;\(\(A &and; &not; B\) &or; \(&not; A &and; B\)\)
+
+### Changes 2 
+
+From the state transition table, I was able to understand how the states work and implement the logic myself.
 
 ### Our Changes 
 
