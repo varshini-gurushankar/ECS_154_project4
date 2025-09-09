@@ -150,5 +150,5 @@ I needed XNOR, so changed it to:\
 
 From the state transition table, I was able to understand how the states work and implement the logic myself.
 
-### Our Changes 
+
 
