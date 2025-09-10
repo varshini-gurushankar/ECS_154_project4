@@ -21,6 +21,8 @@ Stuck on VPWBFrameQueue
 
 9/9/25: Finished VPWBRX, VPWBTX, and VPWController according to how the prof showed it to us in class 
 
+tried to do the extra credit with the help of the hints provided by the professor in class 
+
 Need to figure out how to simulate
 
 ## Known Issues
